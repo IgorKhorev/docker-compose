@@ -39,4 +39,5 @@ INSERT INTO test_table (NAME,SURNAME,CITY,AGE) VALUES
 ('Eduards','Yoricks','Perm',38);
 #### 3. Выполнить запрос к таблице на Python (используйте psycopg2), который покажет   
 #### максимальный и минимальный возраст для имен, длина которых меньше 6 символов
-## 
+## SELECT AGE FROM test_table WHERE LENGTH(NAME) < 6
+
