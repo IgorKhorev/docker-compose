@@ -7,10 +7,19 @@ def process_data(engine):
 
     data = pd.read_sql('SELECT AGE FROM test_table WHERE LENGTH(NAME) < 6',conn)
 
-    means = data.mean()
-    max1 = data.max()
-    min1 = data.min()
-    return means + "max " + max1 + "min " + min1
+     # Вычисляем среднее, максимум и минимум значений по столбцу
+        means = data.mean()
+        max1 = data.max()
+        min1 = data.min()
+        
+        # Объединяем результаты в один DataFrame
+        summary = pd.DataFrame({
+            "Mean": means,
+            "Max": max1,
+            "Min": min1
+        })
+    
+    return summary
 
 if __name__ == "__main__":
     db_user = 'postgres'
