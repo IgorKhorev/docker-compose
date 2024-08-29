@@ -41,3 +41,7 @@ INSERT INTO test_table (NAME,SURNAME,CITY,AGE) VALUES
 #### максимальный и минимальный возраст для имен, длина которых меньше 6 символов
 ## SELECT AGE FROM test_table WHERE LENGTH(NAME) < 6
 
+#### 4. Получившийся результат должен выводиться в терминале docker при запуске образа. 
+![Screen_docker-compose](https://github.com/user-attachments/assets/b59a9442-c63b-49ed-b0f1-ce3ce3a44f5b)
+
+
