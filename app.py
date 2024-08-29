@@ -5,11 +5,12 @@ from sqlalchemy import create_engine
 def process_data(engine):
     conn = engine.connect()
 
-    data = pd.read_sql('SELECT * from test_table',conn)
+    data = pd.read_sql('SELECT AGE FROM test_table WHERE LENGTH(NAME) < 6',conn)
 
     means = data.mean()
-
-    return means
+    max1 = data.max()
+    min1 = data.min()
+    return means + "max " + max1 + "min " + min1
 
 if __name__ == "__main__":
     db_user = 'postgres'
@@ -22,5 +23,5 @@ if __name__ == "__main__":
 
     result = process_data(engine)
 
-    print("Среднее значение по столбцам")
+    print("Среднее значение,min,max в столбике возраст")
     print(result)
